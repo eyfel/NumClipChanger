@@ -29,7 +29,7 @@ def start_gui():
     window.attributes('-topmost', True)
 
     current_clipboard_content = pyperclip.paste()
-    update_gui_with_new_text(current_clipboard_content)  # GUI'yi başlangıçta güncelle
+    update_gui_with_new_text(current_clipboard_content)
 
     window.mainloop()
 
@@ -71,7 +71,7 @@ def decrease_number(number_str):
 
 
 def handle_clipboard_update(e):
-    global label  # label widget'ını güncellemek için global değişkeni kullan
+    global label  
     if e.event_type == 'down' and e.name.lower() == 'e':
         
         current_clipboard_content = pyperclip.paste()
@@ -86,9 +86,9 @@ def handle_clipboard_update(e):
             parts[-1] = re.sub(r'\d+$', incremented_number_str, last_part)
             new_clipboard_content = "-".join(parts)
             pyperclip.copy(new_clipboard_content)
-            update_gui_with_new_text(new_clipboard_content)  # GUI'yi güncelle
+            update_gui_with_new_text(new_clipboard_content)  
         else:
-            update_gui_with_new_text("No number found to increment.")  # GUI'yi güncelle
+            update_gui_with_new_text("No number found to increment.")  
 
     elif e.event_type == 'down' and e.name.lower() == 'r':
         
@@ -104,9 +104,9 @@ def handle_clipboard_update(e):
             parts[-1] = re.sub(r'\d+$', decremented_number_str, last_part)
             new_clipboard_content = "-".join(parts)
             pyperclip.copy(new_clipboard_content)
-            update_gui_with_new_text(new_clipboard_content)  # GUI'yi güncelle
+            update_gui_with_new_text(new_clipboard_content)  
         else:
-            update_gui_with_new_text("No number found to decrement.")  # GUI'yi güncelle
+            update_gui_with_new_text("No number found to decrement.")  
 
 
 
