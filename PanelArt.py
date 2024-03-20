@@ -28,7 +28,6 @@ def start_gui():
     label.pack(expand=True)
     window.attributes('-topmost', True)
 
-    # Panodaki mevcut içeriği al ve göster
     current_clipboard_content = pyperclip.paste()
     update_gui_with_new_text(current_clipboard_content)  # GUI'yi başlangıçta güncelle
 
